@@ -85,3 +85,26 @@ function showQuestion() {
     });
   }
 }
+
+// Added event listener on the div containing the buttons.
+choicesDiv.addEventListener("click", function (e) {
+    //event delegation
+    // Check if answer is correct
+    let answerClicked = e.target.innerText;
+    console.log(answerClicked);
+    if (answerClicked === quizQuestions[currentQuestionIndex].correctOption) {
+      alert("Correct!");
+    } else {
+      alert("Incorrect! You lose 15 sec.");
+      timer - 15;
+    }
+    currentQuestionIndex++;
+    showQuestion();
+    if (currentQuestionIndex == 4 || timer == 0) {
+      clearInterval(timerInterval);
+      endScreenDiv.classList.remove("hide");
+      questionsDiv.setAttribute("class", "hide");
+      // Final score equals seconds left.
+      finalScore.textContent = timer;
+    }
+  });
