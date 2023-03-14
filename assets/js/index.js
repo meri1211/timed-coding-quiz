@@ -30,3 +30,15 @@ let quizQuestions = [
   console.log(quizQuestions[0].answers);
   
   console.log(quizQuestions);
+
+  
+//Created variables containing the ids of the elements, so that we can grab them with JS.
+let questionTitle = document.querySelector("#question-title");
+let choicesDiv = document.querySelector("#choices");
+let startButton = document.querySelector("#start");
+let submitButton = document.querySelector("#submit");
+let timeCountEl = document.querySelector("#time");
+let endScreenDiv = document.querySelector("#end-screen");
+let questionsDiv = document.querySelector("#questions");
+let finalScore = document.querySelector("#final-score");
+let userName = document.querySelector("#initials");
