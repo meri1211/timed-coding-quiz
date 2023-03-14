@@ -68,3 +68,20 @@ startButton.addEventListener("click", function (event) {
     }, 1000);
   }
 });
+
+showQuestion();
+// Show quiz questions and answer options depending on the current question.
+function showQuestion() {
+  for (let i = 0; i < quizQuestions.length; i++) {
+    currentQuestion = quizQuestions[currentQuestionIndex];
+    console.log(currentQuestion);
+    questionTitle.innerText = currentQuestion.question;
+    choicesDiv.innerHTML = "";
+    currentQuestion.answers.forEach((answer) => {
+      optionButton = document.createElement("button");
+      optionButton.innerText = answer;
+      optionButton.classList.add("btn");
+      choicesDiv.appendChild(optionButton);
+    });
+  }
+}
